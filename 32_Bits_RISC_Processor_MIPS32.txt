@@ -97,9 +97,9 @@ parameter ADD = 6'b000000, SUB = 6'b000001, AND =6'b000010,         OR = 6'b0000
           
           RM_ALU : begin
             case  (ID_EX_IR[31:26])
-           ADDI :  EX_MEM_ALUOut <= #2 ID_EX_A +ID_EX_Imm;
-           SUBI :  EX_MEM_ALUOut <= #2 ID_EX_A - ID_EX_Imm; 
-           SLTI :  EX_MEM_ALUOut <= #2 ID_EX_A < ID_EX_Imm;
+           ADDI :  EX_MEM_ALUOut <= #2 ID_EX_B +ID_EX_Imm;
+           SUBI :  EX_MEM_ALUOut <= #2 ID_EX_B - ID_EX_Imm; 
+           SLTI :  EX_MEM_ALUOut <= #2 ID_EX_B < ID_EX_Imm;
             default : EX_MEM_ALUOut <= #2 32'hxxxxxxxx;
             endcase
           end 
